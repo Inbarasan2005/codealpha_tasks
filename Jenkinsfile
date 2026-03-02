@@ -2,10 +2,18 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+
+        stage('Install Dependencies') {
             steps {
-                echo 'Hello from Jenkins!'
+                bat 'pip install -r CodeAlpha_CreditScoring/requirements.txt'
             }
         }
+
+        stage('Run Project') {
+            steps {
+                bat 'python CodeAlpha_CreditScoring/credit_scoring.py'
+            }
+        }
+
     }
 }
