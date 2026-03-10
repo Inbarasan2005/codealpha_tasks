@@ -1,0 +1,1 @@
+print("Credit Scoring Project Running Successfully")
